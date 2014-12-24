@@ -1,3 +1,4 @@
 Options +FollowSymLinks
 RewriteEngine on
-RewriteRule (.*) http://hofratsuess.ch/$1 [R=301,L]
+RewriteRule ^foobar$ http://hofratsuess.ch/$1 [R=301,L]
+RewriteRule ^(.*)$ http://hofratsuess.ch/$1 [R=301,L]
