@@ -1,7 +1,8 @@
 Options +FollowSymLinks
 RewriteEngine on
 
-RewriteRule ^$ http://hofratsuess.ch/blog [R=301,L]
+RewriteCond %{REQUEST_URI} !^/$
+RewriteRule ^(.*)$ http://hofratsuess.ch/$1 [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^(.*)$ http://hofratsuess.ch/$1 [R=301,L]
+RewriteRule ^$ http://hofratsuess.ch/blog [R=301,L]
