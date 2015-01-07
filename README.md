@@ -11,6 +11,6 @@ wget -r --spider --domains=hofratsuess.ch,thedigitalbrothers.ch http://hofratsue
 # Isolating thedigitalbrothers urls
 cat links.txt | grep "thedigitalbrothers" > links_thedigitalbrothers.txt
 
-# Extract the urls from the logs files
-cat links_thedigitalbrothers.txt | awk '{gsub("URL\:",""); print}' | awk '{print $3}' | grep -v '^$' > urls_thedigitalbrothers.txt
+# Extract the urls from the log file
+cat links_thedigitalbrothers.txt | awk '{gsub("URL\:",""); print}' | awk '{print $3}' | grep -v '^$' | grep 'http://' > urls_thedigitalbrothers.txt
 ```
